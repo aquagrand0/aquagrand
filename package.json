@@ -1,0 +1,79 @@
+{
+  "name": "aquagrand",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A ticket system application built with React and Electron.",
+  "author": "Shpetim <shpetim.r.13@gmail.com>",
+  "main": "main.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "react-to-print": "^2.15.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron-dev": "concurrently \"npm:start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.ticket-system.app",
+    "productName": "Ticket System",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "build/**/*",
+      "main.js"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico",
+      "artifactName": "${productName} Setup ${version}.${ext}",
+      "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "include": "build/installer.nsh"
+      }
+    },
+    "linux": {
+      "target": "AppImage",
+      "maintainer": "Your Name <your-email@example.com>",
+      "category": "Utility"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^31.2.0",
+    "electron-builder": "^24.13.3",
+    "electron-is-dev": "^3.0.1",
+    "tailwindcss": "^3.4.4",
+    "wait-on": "^7.2.0"
+  }
+}
