@@ -22,16 +22,16 @@ const TicketForm = ({ addTickets }) => {
       <h2 className="text-xl font-bold mb-4">Biletat per Pishine</h2>
       <div className="mb-4">
         <button
-          onClick={() => handleAddTicket(100)}
+          onClick={() => handleAddTicket(150)}
           className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700 mb-2"
         >
-          100 denare
+          150 denare
         </button>
         <button
-          onClick={() => handleAddTicket(200)}
+          onClick={() => handleAddTicket(250)}
           className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700"
         >
-          200 denare
+          250 denare
         </button>
       </div>
       {tickets.length > 0 && (
